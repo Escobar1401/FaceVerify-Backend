@@ -7,7 +7,6 @@ const port = 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const mysql = require('mysql2');
 const db = mysql.createPool({
   connectionLimit: 10, // Puedes ajustar este número
   host: process.env.DB_HOST,
