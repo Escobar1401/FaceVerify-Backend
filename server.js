@@ -28,13 +28,42 @@ app.get('/api/estudiantes', (req, res) => {
 });
 
 app.post('/api/estudiantes', (req, res) => {
-    const { nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante } = req.body;
-    const sql = `INSERT INTO ESTUDIANTE (nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante) VALUES (?, ?, ?, ?, ?, ?)`;
-    db.query(sql, [nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante], (err, result) => {
-        if (err) return res.status(500).json({ error: 'Error al insertar estudiante' });
-        res.json({ id_estudiante: result.insertId, nombre_estudiante, apellido_estudiante, correo_estudiante });
+    const {
+      nombre_estudiante,
+      apellido_estudiante,
+      edad_estudiante,
+      correo_estudiante,
+      contraseña_estudiante,
+      telefono_estudiante
+    } = req.body;
+  
+    console.log("📥 Datos recibidos:", req.body); // Log de entrada
+  
+    const sql = `INSERT INTO ESTUDIANTE (nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante)
+                 VALUES (?, ?, ?, ?, ?, ?)`;
+  
+    db.query(sql, [
+      nombre_estudiante,
+      apellido_estudiante,
+      edad_estudiante,
+      correo_estudiante,
+      contraseña_estudiante,
+      telefono_estudiante
+    ], (err, result) => {
+      if (err) {
+        console.error("❌ Error al insertar estudiante:", err); // Log de error
+        return res.status(500).json({ error: 'Error al insertar estudiante' });
+      }
+  
+      res.status(201).json({
+        id_estudiante: result.insertId,
+        nombre_estudiante,
+        apellido_estudiante,
+        correo_estudiante
+      });
     });
-});
+  });
+  
 
 // ----------- PROFESORES -----------
 app.get('/api/profesores', (req, res) => {
