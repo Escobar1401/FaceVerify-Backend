@@ -39,17 +39,16 @@ async function addEstudiante() {
     const apellido = document.getElementById('apellido').value.trim();
     const edad = document.getElementById('edad').value.trim();
     const correo = document.getElementById('correo').value.trim();
-    const contraseña = prompt('Contraseña del estudiante:');
-    const telefono = prompt('Teléfono del estudiante:');
+    const contrasena = document.getElementById('contrasena').value.trim();
 
-    if (!nombre || !apellido || !edad || !correo || !contraseña || !telefono) {
+    if (!nombre || !apellido || !edad || !correo || !contrasena) {
         return alert('Completa todos los campos del estudiante.');
     }
 
     const res = await fetch('/api/estudiantes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre_estudiante: nombre, apellido_estudiante: apellido, edad_estudiante: edad, correo_estudiante: correo, contraseña_estudiante: contraseña, telefono_estudiante: telefono })
+        body: JSON.stringify({ nombre_estudiante: nombre, apellido_estudiante: apellido, edad_estudiante: edad, correo_estudiante: correo, contraseña_estudiante: contrasena })
     });
 
     if (!res.ok) return alert('Error al agregar estudiante');
