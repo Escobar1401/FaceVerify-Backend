@@ -1,10 +1,14 @@
 {
   "name": "faceverify-backend",
   "version": "1.0.0",
+  "description": "Backend para FaceVerify",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
