@@ -9,10 +9,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-});
+    database: process.env.DB_NAME,
+    connectTimeout: 10000 // 10 segundos para esperar la respuesta
+  });
+  
 
 db.connect((err) => {
     if (err) return console.error('DB error:', err);
