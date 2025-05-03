@@ -18,7 +18,7 @@ const db = mysql.createPool({
 
 // ----------- ESTUDIANTE -----------
 app.get('/api/estudiantes', (req, res) => {
-    db.query('SELECT * FROM ESTUDIANTE', (err, results) => {
+    db.query('SELECT * FROM estudiante', (err, results) => {
         if (err) return res.status(500).json({ error: 'Error al obtener estudiantes' });
         res.json(results);
     });
@@ -36,7 +36,7 @@ app.post('/api/estudiantes', (req, res) => {
   
     console.log("📥 Datos recibidos:", req.body); // Log de entrada
   
-    const sql = `INSERT INTO ESTUDIANTE (nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante)
+    const sql = `INSERT INTO estudiante (nombre_estudiante, apellido_estudiante, edad_estudiante, correo_estudiante, contraseña_estudiante, telefono_estudiante)
                  VALUES (?, ?, ?, ?, ?, ?)`;
   
     db.query(sql, [
