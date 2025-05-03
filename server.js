@@ -16,12 +16,6 @@ const db = mysql.createPool({
   database: process.env.DB_NAME
 });
 
-
-db.connect((err) => {
-    if (err) return console.error('DB error:', err);
-    console.log('Conectado a la base de datos MySQL.');
-});
-
 // ----------- ESTUDIANTE -----------
 app.get('/api/estudiantes', (req, res) => {
     db.query('SELECT * FROM ESTUDIANTE', (err, results) => {
