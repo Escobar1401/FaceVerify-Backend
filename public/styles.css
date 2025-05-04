@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #0A0F1F;
     color: #EAF6FF;
@@ -21,6 +22,43 @@ body {
     padding: 20px 10px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
 }
+.button {
+        width: 100%;
+        padding: 10px;
+        background-color: #111830;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        box-shadow: 8px 5px 8px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    button:hover {
+        background-color: #1a2341;
+    }
+
+    #subButtons button {
+        background-color: #111830;
+        color: white; 
+        font-size: 16px; 
+        padding: 10px 20px; 
+        margin: 5px; 
+        margin-left: -1px;
+        border: 1px solid #1f2949;
+        border-radius: 5px; 
+        cursor: pointer; 
+        transition: background-color 0.3s ease; 
+    }
+    
+    #subButtons button:hover {
+        background-color: #1a223f; 
+    }
+
+
 
 .sidebar ul {
     list-style: none;
@@ -111,4 +149,50 @@ ul li {
 
 ul li:last-child {
     border-bottom: none;
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #0F172A;
+    color: #F1F5F9;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.crud-table thead {
+    background-color: #1E293B;
+}
+
+.crud-table th,
+.crud-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    
+}
+
+.crud-table tr:hover {
+    background-color: #1a223f;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #0F172A;
+    color: #E2E8F0;
+}
+
+.data-table th, .data-table td {
+    padding: 10px;
+    border: 1px solid #334155;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #1E293B;
+    font-weight: bold;
 }
