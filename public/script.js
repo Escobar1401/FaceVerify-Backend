@@ -300,7 +300,7 @@ async function addAsistencia() {
 
     if (!res.ok) {
         const error = await res.json();
-        return alert(error.error || 'Error al registrar asistencia');
+        return alert(error.error || 'Error al registrar asistenciaa');
     }
 
     fetchAsistencias();

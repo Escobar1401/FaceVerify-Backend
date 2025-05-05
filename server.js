@@ -36,7 +36,7 @@ app.post('/api/estudiantes', (req, res) => {
 
     console.log("📥 Datos recibidos:", req.body); // Log de entrada
 
-    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    // -- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO --
     if (!correo_estudiante.endsWith('@edu.co')) {
         return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
     }
