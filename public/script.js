@@ -20,6 +20,172 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
+function toggleMenu() {
+    const menuList = document.getElementById('menuList');
+    if (menuList.style.display === 'none') {
+        menuList.style.display = 'block';
+    } else {
+        menuList.style.display = 'none';
+    }
+}
+
+function toggleMenu() {
+    const subButtons = document.getElementById('subButtons');
+    subButtons.style.display = subButtons.style.display === 'none' ? 'block' : 'none';
+}
+
+function toggleCreateMenu() {
+    const createMenu = document.getElementById('createMenu');
+    if (createMenu.style.display === 'none') {
+        createMenu.style.display = 'block';
+    } else {
+        createMenu.style.display = 'none';
+    }
+}
+
+
+
+
+function toggleReadMenu() {
+    const readMenu = document.getElementById('readMenu');
+    if (readMenu.style.display === 'none') {
+        readMenu.style.display = 'block';
+    } else {
+        readMenu.style.display = 'none';
+    }
+}
+
+function toggleUpdateMenu() {
+    const updateMenu = document.getElementById('updateMenu');
+    if (updateMenu.style.display === 'none') {
+        updateMenu.style.display = 'block';
+    } else {
+        updateMenu.style.display = 'none';
+    }
+}
+
+
+function toggleDeleteMenu() {
+    const deleteMenu = document.getElementById('deleteMenu');
+    if (deleteMenu.style.display === 'none') {
+        deleteMenu.style.display = 'block';
+    } else {
+        deleteMenu.style.display = 'none';
+    }
+}
+
+// function showSection(id) {
+//     const sections = document.querySelectorAll('.content-section');
+//     sections.forEach(section => {
+//         section.classList.remove('active');
+//     });
+
+//     const activeSection = document.getElementById(id);
+//     if (activeSection) {
+//         activeSection.classList.add('active');
+
+//         if (id === 'estudiantesRead') {
+//             fetchEstudiantes();
+//         }
+//         // Aquí puedes agregar más condicionales para otros roles si deseas
+//     }
+// }
+// function showSection(id) {
+//     document.querySelectorAll('.content-section').forEach(section => {
+//         section.classList.remove('active');
+//     });
+
+//     document.getElementById(id).classList.add('active');
+
+//     if (id.endsWith('Read')) {
+//         loadDataForSection(id);
+//     }
+// }
+
+// function loadDataForSection(id) {
+//     const entity = id.replace('Read', '');
+//     const table = document.getElementById('tabla' + capitalize(entity) + 'Read');
+
+//     fetch(`http://localhost:8000/api/${entity}`) // Ajusta la URL según tu backend
+//         .then(response => response.json())
+//         .then(data => {
+//             renderTable(table, data);
+//         })
+//         .catch(error => {
+//             table.innerHTML = "<tr><td colspan='5'>Error cargando datos</td></tr>";
+//             console.error(error);
+//         });
+// }
+
+// function renderTable(table, data) {
+//     if (data.length === 0) {
+//         table.innerHTML = "<tr><td colspan='5'>No hay datos disponibles</td></tr>";
+//         return;
+//     }
+
+//     const headers = Object.keys(data[0]);
+//     const thead = "<thead><tr>" + headers.map(h => `<th>${h}</th>`).join('') + "</tr></thead>";
+//     const tbody = "<tbody>" + data.map(item => (
+//         "<tr>" + headers.map(h => `<td>${item[h]}</td>`).join('') + "</tr>"
+//     )).join('') + "</tbody>";
+
+//     table.innerHTML = thead + tbody;
+// }
+
+// function capitalize(str) {
+//     return str.charAt(0).toUpperCase() + str.slice(1);
+// }
+
+
+
+
+function cargarEntidad(entidad) {
+    fetch(`http://localhost:5000/${entidad}`) // Ajusta si usas otro host o puerto
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById(`${entidad}TableBody`);
+            tableBody.innerHTML = '';
+            data.forEach(item => {
+                const fila = `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.nombre}</td>
+                        <td>${item.apellido}</td>
+                        <td>${item.correo}</td>
+                        <td>${item.edad}</td>
+                        <td>${item.materia}</td>
+                        <td>${item.asignatura}</td>
+                        <td>${item.fecha}</td>
+                        <td>${item.hora}</td>
+                        <td>${item.telefono}</td>
+                        <td>${item.numerodeidentificacion}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += fila;
+            });
+        })
+        .catch(error => console.error(`Error cargando ${entidad}:`, error));
+}
+
+// Mostrar la sección correspondiente y cargar los datos
+function mostrarTabla(entidad) {
+    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+    document.getElementById(`${entidad}Read`).classList.add('active');
+    cargarEntidad(entidad);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ----------- Estudiantes -----------
 async function fetchEstudiantes() {
     const res = await fetch('/api/estudiantes');
@@ -33,6 +199,13 @@ async function fetchEstudiantes() {
         list.appendChild(li);
     });
 }
+document.getElementById('infoButton').addEventListener('click', () => {
+    const infoSection = document.getElementById('infoSection');
+    if (infoSection) {
+        infoSection.classList.toggle('visible');
+        infoSection.textContent = 'Esta es la información adicional que se muestra al hacer clic en el botón.';
+    }
+});
 
 async function addEstudiante() {
     const nombre = document.getElementById('estudianteNombre').value.trim();

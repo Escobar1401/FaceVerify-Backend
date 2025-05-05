@@ -9,20 +9,78 @@
 </head>
 
 <body>
+    
     <div class="container">
         <div class="sidebar">
-            <ul>
-                <li onclick="showSection('estudiantes')">Estudiante</li>
-                <li onclick="showSection('rector')">Rector</li>
-                <li onclick="showSection('coordinadores')">Coordinadores</li>
-                <li onclick="showSection('secretarias')">Secretarias</li>
-                <li onclick="showSection('profesores')">Profesores</li>
-                <li onclick="showSection('grupos')">Grupos</li>
-                <li onclick="showSection('tutores')">Tutores</li>
-                <li onclick="showSection('materias')">Materias</li>
-                <li onclick="showSection('asistencias')">Asistencias</li>
-                <li onclick="showSection('excusas')">Excusas</li>
-            </ul>
+            <div class="button">
+                <h2 onclick="toggleMenu()">CRUD</h2>
+            </div>
+            <div id="subButtons" style="display: none;">
+                <button onclick="toggleCreateMenu()">Crear</button>
+                <div id="createMenu" style="display: none; margin-top: 10px;">
+                    <ul>
+                        <li onclick="showSection('estudiantes')">Estudiante</li>
+                        <li onclick="showSection('rector')">Rector</li>
+                        <li onclick="showSection('coordinadores')">Coordinadores</li>
+                        <li onclick="showSection('secretarias')">Secretarias</li>
+                        <li onclick="showSection('profesores')">Profesores</li>
+                        <li onclick="showSection('grupos')">Grupos</li>
+                        <li onclick="showSection('tutores')">Tutores</li>
+                        <li onclick="showSection('materias')">Materias</li>
+                        <li onclick="showSection('asistencias')">Asistencias</li>
+                        <li onclick="showSection('excusas')">Excusas</li>
+                    </ul>
+                </div>
+                <button onclick="toggleReadMenu()">Leer</button>
+                <div id="readMenu" style="display: none; margin-top: 10px;">
+                    <ul>
+                        <li onclick="showSection('estudiantesRead')">Estudiante</li>
+                        <li onclick="showSection('rectorRead')">Rector</li>
+                        <li onclick="showSection('coordinadoresRead')">Coordinadores</li>
+                        <li onclick="showSection('secretariasRead')">Secretarias</li>
+                        <li onclick="showSection('profesoresRead')">Profesores</li>
+                        <li onclick="showSection('gruposRead')">Grupos</li>
+                        <li onclick="showSection('tutoresRead')">Tutores</li>
+                        <li onclick="showSection('materiasRead')">Materias</li>
+                        <li onclick="showSection('asistenciasRead')">Asistencias</li>
+                        <li onclick="showSection('excusasRead')">Excusas</li>
+                    </ul>
+                </div>
+               
+                <button onclick="toggleUpdateMenu()">Actualizar</button>
+                    <div id="updateMenu" style="display: none; margin-top: 10px;">
+                        <ul>
+                            <li onclick="showSection('estudiantesUpdate')">Estudiante</li>
+                            <li onclick="showSection('rectorUpdate')">Rector</li>
+                            <li onclick="showSection('coordinadoresUpdate')">Coordinadores</li>
+                            <li onclick="showSection('secretariasUpdate')">Secretarias</li>
+                            <li onclick="showSection('profesoresUpdate')">Profesores</li>
+                            <li onclick="showSection('gruposUpdate')">Grupos</li>
+                            <li onclick="showSection('tutoresUpdate')">Tutores</li>
+                            <li onclick="showSection('materiasUpdate')">Materias</li>
+                            <li onclick="showSection('asistenciasUpdate')">Asistencias</li>
+                            <li onclick="showSection('excusasUpdate')">Excusas</li>
+                        </ul>
+                    </div>
+                <button onclick="toggleDeleteMenu()">Eliminar</button>
+                <div id="deleteMenu" style="display: none; margin-top: 10px;">
+                    <ul>
+                        <li onclick="showSection('estudiantesDelete')">Estudiante</li>
+                        <li onclick="showSection('rectorDelete')">Rector</li>
+                        <li onclick="showSection('coordinadoresDelete')">Coordinadores</li>
+                        <li onclick="showSection('secretariasDelete')">Secretarias</li>
+                        <li onclick="showSection('profesoresDelete')">Profesores</li>
+                        <li onclick="showSection('gruposDelete')">Grupos</li>
+                        <li onclick="showSection('tutoresDelete')">Tutores</li>
+                        <li onclick="showSection('materiasDelete')">Materias</li>
+                        <li onclick="showSection('asistenciasDelete')">Asistencias</li>
+                        <li onclick="showSection('excusasDelete')">Excusas</li>
+                    </ul>
+                </div>
+                
+
+            </div>
+           
         </div>
         <div class="tables">
             <!-- Estudiantes -->
@@ -138,6 +196,176 @@
                 <button onclick="addExcusa()">Registrar Excusa</button>
                 <ul id="excusaList"></ul>
             </div>
+
+            <div id="estudiantesRead" class="content-section">
+                <h2>Listado de Estudiantes</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="estudiantesTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            <div id="profesoresRead" class="content-section">
+                <h2>Listado de Profesores</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Numero de identificación</th>
+                            <th>Asignatura</th>
+                        </tr>
+                    </thead>
+                    <tbody id="profesoresTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="tutoresRead" class="content-section">
+                <h2>Listado de Tutores</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tutoresTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="coordinadoresRead" class="content-section">
+                <h2>Listado de Coordinadores</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Numero de identificación</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coordinadoresTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="rectoresRead" class="content-section">
+                <h2>Listado de Rectores</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rectoresTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            <div id="secretariasRead" class="content-section">
+                <h2>Listado de Secretarias</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Numero de identificación</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="secretariasTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="gruposRead" class="content-section">
+                <h2>Listado de Grupos</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del grupo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gruposTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="materiasRead" class="content-section">
+                <h2>Listado de Materias</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre de la materia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="materiasTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="asistenciasRead" class="content-section">
+                <h2>Listado de Asistencias</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Hora</th>
+                            <th>Fecha</th>
+                            <th>ID Estudiante</th>
+                        </tr>
+                    </thead>
+                    <tbody id="asistenciasTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="excusasRead" class="content-section">
+                <h2>Listado de Excusas</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Correo Secretaria</th>
+                            <th>ID Materia</th>
+                            <th>ID Profesor</th>
+                            <th>ID Estudiante</th>
+                            <th>ID Secretaria</th>
+                        </tr>
+                    </thead>
+                    <tbody id="excusasTableBody">
+                    </tbody>
+                </table>
+            </div>
+            
+
         </div>
     </div>
     <script src="script.js"></script>
