@@ -43,9 +43,6 @@ function toggleCreateMenu() {
     }
 }
 
-
-
-
 function toggleReadMenu() {
     const readMenu = document.getElementById('readMenu');
     if (readMenu.style.display === 'none') {
@@ -64,7 +61,6 @@ function toggleUpdateMenu() {
     }
 }
 
-
 function toggleDeleteMenu() {
     const deleteMenu = document.getElementById('deleteMenu');
     if (deleteMenu.style.display === 'none') {
@@ -73,71 +69,6 @@ function toggleDeleteMenu() {
         deleteMenu.style.display = 'none';
     }
 }
-
-// function showSection(id) {
-//     const sections = document.querySelectorAll('.content-section');
-//     sections.forEach(section => {
-//         section.classList.remove('active');
-//     });
-
-//     const activeSection = document.getElementById(id);
-//     if (activeSection) {
-//         activeSection.classList.add('active');
-
-//         if (id === 'estudiantesRead') {
-//             fetchEstudiantes();
-//         }
-//         // Aquí puedes agregar más condicionales para otros roles si deseas
-//     }
-// }
-// function showSection(id) {
-//     document.querySelectorAll('.content-section').forEach(section => {
-//         section.classList.remove('active');
-//     });
-
-//     document.getElementById(id).classList.add('active');
-
-//     if (id.endsWith('Read')) {
-//         loadDataForSection(id);
-//     }
-// }
-
-// function loadDataForSection(id) {
-//     const entity = id.replace('Read', '');
-//     const table = document.getElementById('tabla' + capitalize(entity) + 'Read');
-
-//     fetch(`http://localhost:8000/api/${entity}`) // Ajusta la URL según tu backend
-//         .then(response => response.json())
-//         .then(data => {
-//             renderTable(table, data);
-//         })
-//         .catch(error => {
-//             table.innerHTML = "<tr><td colspan='5'>Error cargando datos</td></tr>";
-//             console.error(error);
-//         });
-// }
-
-// function renderTable(table, data) {
-//     if (data.length === 0) {
-//         table.innerHTML = "<tr><td colspan='5'>No hay datos disponibles</td></tr>";
-//         return;
-//     }
-
-//     const headers = Object.keys(data[0]);
-//     const thead = "<thead><tr>" + headers.map(h => `<th>${h}</th>`).join('') + "</tr></thead>";
-//     const tbody = "<tbody>" + data.map(item => (
-//         "<tr>" + headers.map(h => `<td>${item[h]}</td>`).join('') + "</tr>"
-//     )).join('') + "</tbody>";
-
-//     table.innerHTML = thead + tbody;
-// }
-
-// function capitalize(str) {
-//     return str.charAt(0).toUpperCase() + str.slice(1);
-// }
-
-
-
 
 function cargarEntidad(entidad) {
     fetch(`http://localhost:5000/${entidad}`) // Ajusta si usas otro host o puerto
@@ -173,18 +104,6 @@ function mostrarTabla(entidad) {
     document.getElementById(`${entidad}Read`).classList.add('active');
     cargarEntidad(entidad);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ----------- Estudiantes -----------
 async function fetchEstudiantes() {
