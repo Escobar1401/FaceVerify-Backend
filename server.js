@@ -37,8 +37,8 @@ app.post('/api/estudiantes', (req, res) => {
     console.log("📥 Datos recibidos:", req.body); // Log de entrada
 
     // -- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO --
-    if (!correo_estudiante.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_estudiante.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -80,8 +80,8 @@ app.post('/api/profesores', (req, res) => {
     const { nombre_profesor, apellido_profesor, identificacion_profesor, correo_profesor, contraseña_profesor, telefono_profesor, asignatura_profesor } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_profesor.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_profesor.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -104,8 +104,8 @@ app.post('/api/secretarias', (req, res) => {
     const { nombre_secretaria, apellido_secretaria, identificacion_secretaria, correo_secretaria, contraseña_secretaria, telefono_secretaria } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_secretaria.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_secretaria.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -128,8 +128,8 @@ app.post('/api/rectores', (req, res) => {
     const { nombre_rector, apellido_rector, identificacion_rector, correo_rector, contraseña_rector, telefono_rector } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_rector.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_rector.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -152,8 +152,8 @@ app.post('/api/coordinadores', (req, res) => {
     const { nombre_coordinador, apellido_coordinador, identificacion_coordinador, correo_coordinador, contraseña_coordinador, telefono_coordinador } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_coordinador.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_coordinador.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -176,8 +176,8 @@ app.post('/api/tutores', (req, res) => {
     const { nombre_tutorlegal, apellido_tutorlegal, identificacion_tutorlegal, correo_tutorlegal, contraseña_tutorlegal, telefono_tutorlegal } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_tutorlegal.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_tutorlegal.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -239,8 +239,8 @@ app.post('/api/excusas', (req, res) => {
     const { fecha_excusa, hora_excusa, correo_secretaria, id_materia, id_profesor, id_estudiante, id_secretaria } = req.body;
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo_secretaria.endsWith('@edu.co')) {
-        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@edu.co".' });
+    if (!correo_secretaria.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return res.status(400).json({ error: 'El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co".' });
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 

@@ -47,8 +47,8 @@ async function addEstudiante() {
     }
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
