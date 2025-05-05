@@ -47,8 +47,8 @@ async function addEstudiante() {
     }
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
-        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -77,8 +77,8 @@ async function addProfesor() {
     }
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -106,8 +106,8 @@ async function addSecretaria() {
     }
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -133,8 +133,8 @@ async function addRector() {
     if (!nombre || !apellido || !identificacion || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -160,8 +160,8 @@ async function addCoordinador() {
     if (!nombre || !apellido || !identificacion || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
     const res = await fetch('/api/coordinadores', {
@@ -225,8 +225,8 @@ async function addTutor() {
     if (!nombre || !apellido || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
@@ -337,8 +337,8 @@ async function addExcusa() {
     }
 
     // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
-    if (!correo.endsWith('@edu.co')) {
-        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    if (!correo.endsWith('@luiscarlosgalansarmiento.edu.co')) {
+        return alert('El correo electrónico debe terminar con "@luiscarlosgalansarmiento.edu.co". Por favor, verifica.');
     }
     // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
