@@ -28,11 +28,12 @@
             <!-- Estudiantes -->
             <div id="estudiantes" class="content-section active">
                 <h2>Tabla de Estudiantes</h2>
-                <input type="text" id="nombre" placeholder="Nombre" />
-                <input type="text" id="apellido" placeholder="Apellido" />
-                <input type="email" id="correo" placeholder="Correo Electrónico" />
-                <input type="password" id="contrasena" placeholder="Contraseña" />
+                <input type="text" id="Nombre" placeholder="Nombres" />
+                <input type="text" id="Apellido" placeholder="Apellidos" />
                 <input type="number" id="edad" placeholder="Edad" />
+                <input type="email" id="Correo" placeholder="Correo Electrónico" />
+                <input type="text" id="Telefono" placeholder="Teléfono">
+                <input type="password" id="Contrasena" placeholder="Contraseña" />
                 <!--Falta el registro facial-->
                 <button onclick="addEstudiante()">Agregar Estudiante</button>
                 <ul id="estudianteList"></ul>
@@ -41,10 +42,12 @@
             <!-- Rector -->
             <div id="rector" class="content-section">
                 <h2>Tabla de Rector</h2>
-                <input type="text" id="rectorNombre" placeholder="Nombre" />
-                <input type="text" id="rectorApellido" placeholder="Apellido" />
+                <input type="text" id="rectorNombre" placeholder="Nombres" />
+                <input type="text" id="rectorApellido" placeholder="Apellidos" />
                 <input type="text" id="rectorNumero" placeholder="Número de Identificación" />
                 <input type="email" id="rectorCorreo" placeholder="Correo Electrónico" />
+                <input type="text" id="rectorTelefono" placeholder="Teléfono">
+                <input type="password" id="rectorContrasena" placeholder="Contraseña" />
                 <button onclick="addRector()">Agregar Rector</button>
                 <ul id="rectorList"></ul>
             </div>
@@ -52,10 +55,12 @@
             <!-- Coordinadores -->
             <div id="coordinadores" class="content-section">
                 <h2>Tabla de Coordinadores</h2>
-                <input type="text" id="coordinadorNombre" placeholder="Nombre" />
-                <input type="text" id="coordinadorApellido" placeholder="Apellido" />
+                <input type="text" id="coordinadorNombre" placeholder="Nombres" />
+                <input type="text" id="coordinadorApellido" placeholder="Apellidos" />
                 <input type="text" id="coordinadorNumero" placeholder="Número de Identificación" />
                 <input type="email" id="coordinadorCorreo" placeholder="Correo Electrónico" />
+                <input type="text" id="coordinadorTelefono" placeholder="Teléfono">
+                <input type="password" id="coordinadorContrasena" placeholder="Contraseña" />
                 <button onclick="addCoordinador()">Agregar Coordinador</button>
                 <ul id="coordinadorList"></ul>
             </div>
@@ -63,10 +68,12 @@
             <!-- Secretarias -->
             <div id="secretarias" class="content-section">
                 <h2>Tabla de Secretarias</h2>
-                <input type="text" id="secretariaNombre" placeholder="Nombre" />
-                <input type="text" id="secretariaApellido" placeholder="Apellido" />
+                <input type="text" id="secretariaNombre" placeholder="Nombres" />
+                <input type="text" id="secretariaApellido" placeholder="Apellidos" />
                 <input type="text" id="secretariaNumero" placeholder="Número de Identificación" />
                 <input type="email" id="secretariaCorreo" placeholder="Correo Electrónico" />
+                <input type="text" id="secretariaTelefono" placeholder="Teléfono">
+                <input type="password" id="secretariaContrasena" placeholder="Contraseña" />
                 <button onclick="addSecretaria()">Agregar Secretaria</button>
                 <ul id="secretariaList"></ul>
             </div>
@@ -74,11 +81,13 @@
             <!-- Profesores -->
             <div id="profesores" class="content-section">
                 <h2>Tabla de Profesores</h2>
-                <input type="text" id="profesorNombre" placeholder="Nombre" />
-                <input type="text" id="profesorApellido" placeholder="Apellido" />
+                <input type="text" id="profesorNombre" placeholder="Nombres" />
+                <input type="text" id="profesorApellido" placeholder="Apellidos" />
                 <input type="text" id="profesorNumero" placeholder="Número de Identificación" />
                 <input type="email" id="profesorCorreo" placeholder="Correo Electrónico" />
+                <input type="text" id="profesorTelefono" placeholder="Teléfono">
                 <input type="text" id="profesorAsignatura" placeholder="Asignatura" />
+                <input type="password" id="profesorContrasena" placeholder="Contraseña" />
                 <button onclick="addProfesor()">Agregar Profesor</button>
                 <ul id="profesorList"></ul>
             </div>
@@ -92,11 +101,11 @@
 
             <div id="tutores" class="content-section">
                 <h2>Tabla de Tutores</h2>
-                <input type="text" id="tutorNombre" placeholder="Nombre">
-                <input type="text" id="tutorApellido" placeholder="Apellido">
+                <input type="text" id="tutorNombre" placeholder="Nombres">
+                <input type="text" id="tutorApellido" placeholder="Apellidos">
                 <input type="email" id="tutorCorreo" placeholder="Correo Electrónico">
-                <input type="text" id="tutorContraseña" placeholder="Contraseña">
                 <input type="text" id="tutorTelefono" placeholder="Teléfono">
+                <input type="text" id="tutorContraseña" placeholder="Contraseña">
                 <button onclick="addTutor()">Agregar Tutor</button>
                 <ul id="tutorList"></ul>
             </div>

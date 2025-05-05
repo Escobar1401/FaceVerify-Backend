@@ -35,20 +35,27 @@ async function fetchEstudiantes() {
 }
 
 async function addEstudiante() {
-    const nombre = document.getElementById('nombre').value.trim();
-    const apellido = document.getElementById('apellido').value.trim();
-    const edad = document.getElementById('edad').value.trim();
-    const correo = document.getElementById('correo').value.trim();
-    const contrasena = document.getElementById('contrasena').value.trim();
+    const nombre = document.getElementById('estudianteNombre').value.trim();
+    const apellido = document.getElementById('estudianteApellido').value.trim();
+    const edad = document.getElementById('estudianteEdad').value.trim();
+    const correo = document.getElementById('estudianteCorreo').value.trim();
+    const contrasena = document.getElementById('estudianteContrasena').value.trim();
+    const telefono = document.getElementById('estudianteTelefono').value.trim();
 
-    if (!nombre || !apellido || !edad || !correo || !contrasena) {
+    if (!nombre || !apellido || !edad || !correo || !contrasena || !telefono) {
         return alert('Completa todos los campos del estudiante.');
     }
+
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
     const res = await fetch('/api/estudiantes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre_estudiante: nombre, apellido_estudiante: apellido, edad_estudiante: edad, correo_estudiante: correo, contraseña_estudiante: contrasena })
+        body: JSON.stringify({ nombre_estudiante: nombre, apellido_estudiante: apellido, edad_estudiante: edad, correo_estudiante: correo, contraseña_estudiante: contrasena, telefono_estudiante: telefono })
     });
 
     if (!res.ok) return alert('Error al agregar estudiante');
@@ -68,6 +75,12 @@ async function addProfesor() {
     if (!nombre || !apellido || !identificacion || !correo || !asignatura || !contraseña || !telefono) {
         return alert('Completa todos los campos del profesor.');
     }
+
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
     const res = await fetch('/api/profesores', {
         method: 'POST',
@@ -92,6 +105,12 @@ async function addSecretaria() {
         return alert('Completa todos los campos de la secretaria.');
     }
 
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+
     const res = await fetch('/api/secretarias', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -112,6 +131,12 @@ async function addRector() {
     const telefono = prompt('Teléfono del rector:');
 
     if (!nombre || !apellido || !identificacion || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
+
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
     const res = await fetch('/api/rectores', {
         method: 'POST',
@@ -134,6 +159,11 @@ async function addCoordinador() {
 
     if (!nombre || !apellido || !identificacion || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
 
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
     const res = await fetch('/api/coordinadores', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -193,6 +223,12 @@ async function addTutor() {
     const telefono = document.getElementById('tutorTelefono').value.trim();
 
     if (!nombre || !apellido || !correo || !contraseña || !telefono) return alert('Todos los campos son obligatorios.');
+
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
     const res = await fetch('/api/tutores', {
         method: 'POST',
@@ -299,6 +335,12 @@ async function addExcusa() {
     if (!fecha || !hora || !correo || !idMateria || !idProfesor || !idEstudiante || !idSecretaria) {
         return alert('Completa todos los campos de excusa.');
     }
+
+    // --- INICIO DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
+    if (!correo.endsWith('@edu.co')) {
+        return alert('El correo electrónico debe terminar con "@edu.co". Por favor, verifica.');
+    }
+    // --- FIN DE LA VALIDACIÓN DEL CORREO ELECTRÓNICO ---
 
     const res = await fetch('/api/excusas', {
         method: 'POST',
