@@ -1,5 +1,3 @@
-// script.js extendido para todos los módulos principales del sistema educativo
-
 document.addEventListener('DOMContentLoaded', () => {
     showSection('estudiantes');
     fetchEstudiantes();
@@ -70,47 +68,6 @@ function toggleDeleteMenu() {
     }
 }
 
-// function cargarEntidad(entidad) {
-//     fetch(`http://localhost:5000/${entidad}`) // Ajusta si usas otro host o puerto
-//         .then(response => response.json())
-//         .then(data => {
-//             const tableBody = document.getElementById(`${entidad}TableBody`);
-//             tableBody.innerHTML = '';
-//             data.forEach(item => {
-//                 const fila = `
-//                     <tr>
-//                         <td>${item.id}</td>
-//                         <td>${item.nombre}</td>
-//                         <td>${item.apellido}</td>
-//                         <td>${item.correo}</td>
-//                         <td>${item.edad}</td>
-//                         <td>${item.materia}</td>
-//                         <td>${item.asignatura}</td>
-//                         <td>${item.fecha}</td>
-//                         <td>${item.hora}</td>
-//                         <td>${item.telefono}</td>
-//                         <td>${item.numerodeidentificacion}</td>
-//                     </tr>
-//                 `;
-//                 tableBody.innerHTML += fila;
-//             });
-//         })
-//         .catch(error => console.error(`Error cargando ${entidad}:`, error));
-// }
-
-// // Mostrar la sección correspondiente y cargar los datos
-// function mostrarTabla(entidad) {
-//     document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-//     document.getElementById(`${entidad}Read`).classList.add('active');
-//     cargarEntidad(entidad);
-// }
-
-// Simulación de los datos de las tablas (esto puede venir de tu base de datos o API)
-const estudiantes = [
-    { id: 1, nombre: "Juan", apellido: "Pérez", correo: "juan@mail.com", edad: 20 },
-    { id: 2, nombre: "Ana", apellido: "Gómez", correo: "ana@mail.com", edad: 22 }
-];
-
 // Función para cargar los datos en la tabla de Estudiantes
 function cargarTablaEstudiantes() {
     const estudiantesTableBody = document.getElementById("estudiantesTableBody");
@@ -150,14 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarTablaEstudiantes();
 });
 
-
-
-// Rector
-const rector = [
-    { id: 1, nombre: "Luis", apellido: "Escobar", numerodeidentificacion: 232344, correo: "Luis@mail.com"  },
-    { id: 2, nombre: "Manuela", apellido: "Galeano", numerodeidentificacion:33434, correo: "Manuela@mail.com"}
-];
-
 function cargarTablaRector() {
     const rectorTableBody = document.getElementById("rectorTableBody");
     rectorTableBody.innerHTML = ""; 
@@ -193,12 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarTablaRector();
 });
 
-// Coordinadores
-const coordinadores = [
-    { id: 1, nombre: "Santi", apellido: "Chavez", numerodeidentificacion: 549626515, correo: "Santi@mail.com"  },
-    { id: 2, nombre: "isa", apellido: "Perez", numerodeidentificacion: 1561215, correo: "Isa@mail.com"}
-];
-
 function cargarTablaCoordinadores() {
     const coordinadoresTableBody = document.getElementById("coordinadoresTableBody");
     coordinadoresTableBody.innerHTML = ""; 
@@ -233,12 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarTablaCoordinadores();
 });
 
-// Secretarias
-const secretarias = [
-    { id: 1, nombre: "Lulu", apellido: "Herrea", numerodeidentificacion: 6546312313, correo: "Lulu@mail.com"  },
-    { id: 2, nombre: "Maria", apellido: "Puerta", numerodeidentificacion: 21544615500, correo: "Maria@mail.com"}
-];
-
 function cargarTablaSecretarias() {
     const SecretariasTableBody = document.getElementById("secretariasTableBody");
     secretariasTableBody.innerHTML = ""; 
@@ -272,12 +209,6 @@ function eliminarSecretarias(id) {
 document.addEventListener("DOMContentLoaded", function () {
     cargarTablaSecretarias();
 });
-
-// Profesores
-const profesores = [
-    { id: 1, nombre: "Marta", apellido: "Lopez", numerodeidentificacion: 78523150, correo: "Marta@mail.com", asignatura: "Español"  },
-    { id: 2, nombre: "Pepe", apellido: "Diaz", numerodeidentificacion: 2254415, correo: "Pepe@mail.com", asignatura: "Sociales"}
-];
 
 function cargarTablaProfesores() {
     const ProfesoresTableBody = document.getElementById("profesoresTableBody");
@@ -314,12 +245,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarTablaProfesores();
 });
 
-// Grupos
-const grupos = [
-    { id: 1, nombredelgrupo: "11-1"  },
-    { id: 2, nombredelgrupo: "8-3" }
-];
-
 function cargarTablaGrupos() {
     const GruposTableBody = document.getElementById("gruposTableBody");
     gruposTableBody.innerHTML = ""; 
@@ -350,13 +275,6 @@ function eliminarGrupos(id) {
 document.addEventListener("DOMContentLoaded", function () {
     cargarTablaGrupos();
 });
-
-// Tutores
-const tutores = [
-    { id: 1, nombre: "Stiven", apellido: "Cano",  correo: "Stiven@mail.com", telefono: 1559641250 },
-    { id: 2, nombre: "Luz", apellido: "Perez",  correo: "Luz@mail.com", telefono: 5496321025 }
-];
-
 
 function cargarTablaTutores() {
     const TutoresTableBody = document.getElementById("tutoresTableBody");
@@ -392,12 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarTablaTutores();
 });
 
-// Materias
-const materias = [
-    { id: 1, nombredelamateria: "Quimica"  },
-    { id: 2, nombredelamateria: "Ingles" }
-];
-
 function cargarTablaMaterias() {
     const MateriasTableBody = document.getElementById("materiasTableBody");
     materiasTableBody.innerHTML = ""; 
@@ -428,12 +340,6 @@ function eliminarMaterias(id) {
 document.addEventListener("DOMContentLoaded", function () {
     cargarTablaMaterias();
 });
-
-// Asistencias
-const asistencias = [
-    { id: 1, hora: "7:30 am", fecha: "01/05/2023", idestudiante: 5 },
-    { id: 2, hora: "8:40 am", fecha: "12/02/2024", idestudiante: 2 }
-];
 
 function cargarTablaAsistencias() {
     const AsistenciasTableBody = document.getElementById("asistenciasTableBody");
@@ -467,12 +373,6 @@ function eliminarAsistencias(id) {
 document.addEventListener("DOMContentLoaded", function () {
     cargarTablaAsistencias();
 });
-
-// Excusas
-const excusas = [
-    { id: 1, hora: "7:30 am", fecha: "01/05/2023", correosecretaria: "Maria@mail.com", idmateria:"7", idprofesor:"5",  idestudiante: 5, idsecretaria: 2 },
-    { id: 2, hora: "8:40 am", fecha: "12/02/2024", correosecretaria: "Lulu@mail.com", idmateria:"6", idprofesor:"4",  idestudiante: 2, idsecretaria: 1 }
-];
 
 function cargarTablaExcusas() {
     const ExcusasTableBody = document.getElementById("excusasTableBody");

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - FaceVerify</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="">
 </head>
 
 <body>
@@ -31,20 +31,20 @@
                     </ul>
                 </div>
                 <button onclick="toggleUpdateMenu()">Actualizar</button>
-                    <div id="updateMenu" style="display: none; margin-top: 10px;">
-                        <ul>
-                            <li onclick="showSection('estudiantesUpdate')">Estudiante</li>
-                            <li onclick="showSection('rectorUpdate')">Rector</li>
-                            <li onclick="showSection('coordinadoresUpdate')">Coordinadores</li>
-                            <li onclick="showSection('secretariasUpdate')">Secretarias</li>
-                            <li onclick="showSection('profesoresUpdate')">Profesores</li>
-                            <li onclick="showSection('gruposUpdate')">Grupos</li>
-                            <li onclick="showSection('tutoresUpdate')">Tutores</li>
-                            <li onclick="showSection('materiasUpdate')">Materias</li>
-                            <li onclick="showSection('asistenciasUpdate')">Asistencias</li>
-                            <li onclick="showSection('excusasUpdate')">Excusas</li>
-                        </ul>
-                    </div>
+                <div id="updateMenu" style="display: none; margin-top: 10px;">
+                    <ul>
+                        <li onclick="showSection('estudiantesUpdate')">Estudiante</li>
+                        <li onclick="showSection('rectorUpdate')">Rector</li>
+                        <li onclick="showSection('coordinadoresUpdate')">Coordinadores</li>
+                        <li onclick="showSection('secretariasUpdate')">Secretarias</li>
+                        <li onclick="showSection('profesoresUpdate')">Profesores</li>
+                        <li onclick="showSection('gruposUpdate')">Grupos</li>
+                        <li onclick="showSection('tutoresUpdate')">Tutores</li>
+                        <li onclick="showSection('materiasUpdate')">Materias</li>
+                        <li onclick="showSection('asistenciasUpdate')">Asistencias</li>
+                        <li onclick="showSection('excusasUpdate')">Excusas</li>
+                    </ul>
+                </div>
                 <button onclick="toggleDeleteMenu()">Eliminar</button>
                 <div id="deleteMenu" style="display: none; margin-top: 10px;">
                     <ul>
@@ -60,7 +60,7 @@
                         <li onclick="showSection('excusasDelete')">Excusas</li>
                     </ul>
                 </div>
-                
+
                 <button onclick="toggleReadMenu()">Ver</button>
                 <div id="readMenu" style="display: none; margin-top: 10px;">
                     <ul>
@@ -76,7 +76,6 @@
                         <li onclick="showSection('excusasRead')">Excusas</li>
                     </ul>
                 </div>
-               
             </div>
         </div>
         <div class="tables">
@@ -194,6 +193,8 @@
                 <ul id="excusaList"></ul>
             </div>
 
+            <!-- Actualizar -->
+
             <div id="estudiantesDelete" class="content-section">
                 <h2>Listado de Estudiantes</h2>
                 <table class="crud-table">
@@ -210,8 +211,7 @@
                     </tbody>
                 </table>
             </div>
-            
-            
+
             <div id="profesoresDelete" class="content-section">
                 <h2>Listado de Profesores</h2>
                 <table class="crud-table">
@@ -229,7 +229,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="tutoresDelete" class="content-section">
                 <h2>Listado de Tutores</h2>
                 <table class="crud-table">
@@ -246,7 +246,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="coordinadoresDelete" class="content-section">
                 <h2>Listado de Coordinadores</h2>
                 <table class="crud-table">
@@ -263,7 +263,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="rectorDelete" class="content-section">
                 <h2>Listado de Rectores</h2>
                 <table class="crud-table">
@@ -274,15 +274,15 @@
                             <th>Apellido</th>
                             <th>Numero de identificacion</th>
                             <th>Correo</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody id="rectorTableBody">
                     </tbody>
                 </table>
             </div>
-            
-            
+
+
             <div id="secretariasDelete" class="content-section">
                 <h2>Listado de Secretarias</h2>
                 <table class="crud-table">
@@ -299,7 +299,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="gruposDelete" class="content-section">
                 <h2>Listado de Grupos</h2>
                 <table class="crud-table">
@@ -313,7 +313,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="materiasDelete" class="content-section">
                 <h2>Listado de Materias</h2>
                 <table class="crud-table">
@@ -327,7 +327,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="asistenciasDelete" class="content-section">
                 <h2>Listado de Asistencias</h2>
                 <table class="crud-table">
@@ -343,7 +343,7 @@
                     </tbody>
                 </table>
             </div>
-            
+
             <div id="excusasDelete" class="content-section">
                 <h2>Listado de Excusas</h2>
                 <table class="crud-table">
@@ -362,14 +362,9 @@
                     <tbody id="excusasTableBody">
                     </tbody>
                 </table>
-            </div>            
-                
 
 
-        
-           
-
-
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

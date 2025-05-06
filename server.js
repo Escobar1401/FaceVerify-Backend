@@ -67,7 +67,6 @@ app.post('/api/estudiantes', (req, res) => {
     });
 });
 
-
 // ----------- PROFESORES -----------
 app.get('/api/profesores', (req, res) => {
     db.query('SELECT * FROM PROFESORES', (err, results) => {
