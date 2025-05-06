@@ -70,40 +70,447 @@ function toggleDeleteMenu() {
     }
 }
 
-function cargarEntidad(entidad) {
-    fetch(`http://localhost:5000/${entidad}`) // Ajusta si usas otro host o puerto
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById(`${entidad}TableBody`);
-            tableBody.innerHTML = '';
-            data.forEach(item => {
-                const fila = `
-                    <tr>
-                        <td>${item.id}</td>
-                        <td>${item.nombre}</td>
-                        <td>${item.apellido}</td>
-                        <td>${item.correo}</td>
-                        <td>${item.edad}</td>
-                        <td>${item.materia}</td>
-                        <td>${item.asignatura}</td>
-                        <td>${item.fecha}</td>
-                        <td>${item.hora}</td>
-                        <td>${item.telefono}</td>
-                        <td>${item.numerodeidentificacion}</td>
-                    </tr>
-                `;
-                tableBody.innerHTML += fila;
-            });
-        })
-        .catch(error => console.error(`Error cargando ${entidad}:`, error));
+// function cargarEntidad(entidad) {
+//     fetch(`http://localhost:5000/${entidad}`) // Ajusta si usas otro host o puerto
+//         .then(response => response.json())
+//         .then(data => {
+//             const tableBody = document.getElementById(`${entidad}TableBody`);
+//             tableBody.innerHTML = '';
+//             data.forEach(item => {
+//                 const fila = `
+//                     <tr>
+//                         <td>${item.id}</td>
+//                         <td>${item.nombre}</td>
+//                         <td>${item.apellido}</td>
+//                         <td>${item.correo}</td>
+//                         <td>${item.edad}</td>
+//                         <td>${item.materia}</td>
+//                         <td>${item.asignatura}</td>
+//                         <td>${item.fecha}</td>
+//                         <td>${item.hora}</td>
+//                         <td>${item.telefono}</td>
+//                         <td>${item.numerodeidentificacion}</td>
+//                     </tr>
+//                 `;
+//                 tableBody.innerHTML += fila;
+//             });
+//         })
+//         .catch(error => console.error(`Error cargando ${entidad}:`, error));
+// }
+
+// // Mostrar la sección correspondiente y cargar los datos
+// function mostrarTabla(entidad) {
+//     document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+//     document.getElementById(`${entidad}Read`).classList.add('active');
+//     cargarEntidad(entidad);
+// }
+
+// Simulación de los datos de las tablas (esto puede venir de tu base de datos o API)
+const estudiantes = [
+    { id: 1, nombre: "Juan", apellido: "Pérez", correo: "juan@mail.com", edad: 20 },
+    { id: 2, nombre: "Ana", apellido: "Gómez", correo: "ana@mail.com", edad: 22 }
+];
+
+// Función para cargar los datos en la tabla de Estudiantes
+function cargarTablaEstudiantes() {
+    const estudiantesTableBody = document.getElementById("estudiantesTableBody");
+    estudiantesTableBody.innerHTML = ""; // Limpiar la tabla antes de cargar nuevos datos
+
+    estudiantes.forEach(estudiante => {
+        const row = document.createElement("tr");
+        row.setAttribute("data-id", estudiante.id); // Añadir ID a la fila para facilitar su eliminación
+
+        row.innerHTML = `
+            <td>${estudiante.id}</td>
+            <td>${estudiante.nombre}</td>
+            <td>${estudiante.apellido}</td>
+            <td>${estudiante.correo}</td>
+            <td>${estudiante.edad}</td>
+            <td><span class="delete-icon" onclick="eliminarEstudiante(${estudiante.id})">🗑️</span></td>
+        `;
+        estudiantesTableBody.appendChild(row);
+    });
 }
 
-// Mostrar la sección correspondiente y cargar los datos
-function mostrarTabla(entidad) {
-    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
-    document.getElementById(`${entidad}Read`).classList.add('active');
-    cargarEntidad(entidad);
+// Función para eliminar un estudiante (o cualquier otro tipo de registro)
+function eliminarEstudiante(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este estudiante?")) {
+        // Filtrar el estudiante de la lista (simulando la eliminación de la base de datos)
+        const index = estudiantes.findIndex(estudiante => estudiante.id === id);
+        if (index !== -1) {
+            estudiantes.splice(index, 1);
+            cargarTablaEstudiantes(); // Recargar la tabla después de la eliminación
+            alert("Estudiante eliminado exitosamente");
+        }
+    }
 }
+
+// Llamamos a la función para cargar los datos cuando se cargue la página
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaEstudiantes();
+});
+
+
+
+// Rector
+const rector = [
+    { id: 1, nombre: "Luis", apellido: "Escobar", numerodeidentificacion: 232344, correo: "Luis@mail.com"  },
+    { id: 2, nombre: "Manuela", apellido: "Galeano", numerodeidentificacion:33434, correo: "Manuela@mail.com"}
+];
+
+function cargarTablaRector() {
+    const rectorTableBody = document.getElementById("rectorTableBody");
+    rectorTableBody.innerHTML = ""; 
+
+    rector.forEach(rector => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", rector.id); 
+
+        row.innerHTML = `
+            <td>${rector.id}</td>
+            <td>${rector.nombre}</td>
+            <td>${rector.apellido}</td>
+            <td>${rector.numerodeidentificacion}</td>
+            <td>${rector.correo}</td>
+            <td><span class="delete-icon" onclick="eliminarRector(${rector.id})">🗑️</span></td>
+        `;
+        rectorTableBody.appendChild(row);
+    });
+}
+
+function eliminarRector(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este rector?")) {
+        const index = rector.findIndex(rector => rector.id === id);
+        if (index !== -1) {
+            rector.splice(index, 1);
+            cargarTablaRector(); 
+            alert("Rector eliminado exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaRector();
+});
+
+// Coordinadores
+const coordinadores = [
+    { id: 1, nombre: "Santi", apellido: "Chavez", numerodeidentificacion: 549626515, correo: "Santi@mail.com"  },
+    { id: 2, nombre: "isa", apellido: "Perez", numerodeidentificacion: 1561215, correo: "Isa@mail.com"}
+];
+
+function cargarTablaCoordinadores() {
+    const coordinadoresTableBody = document.getElementById("coordinadoresTableBody");
+    coordinadoresTableBody.innerHTML = ""; 
+    coordinadores.forEach(coordinadores => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", coordinadores.id); 
+
+        row.innerHTML = `
+            <td>${coordinadores.id}</td>
+            <td>${coordinadores.nombre}</td>
+            <td>${coordinadores.apellido}</td>
+            <td>${coordinadores.numerodeidentificacion}</td>
+            <td>${coordinadores.correo}</td>
+            <td><span class="delete-icon" onclick="eliminarCoordinadores(${coordinadores.id})">🗑️</span></td>
+        `;
+        coordinadoresTableBody.appendChild(row);
+    });
+}
+
+function eliminarCoordinadores(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este coordinador?")) {
+        const index = coordinadores.findIndex(coordinadores => coordinadores.id === id);
+        if (index !== -1) {
+            coordinador.splice(index, 1);
+            cargarTablaCoordinadores(); 
+            alert("Coordinador eliminado exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaCoordinadores();
+});
+
+// Secretarias
+const secretarias = [
+    { id: 1, nombre: "Lulu", apellido: "Herrea", numerodeidentificacion: 6546312313, correo: "Lulu@mail.com"  },
+    { id: 2, nombre: "Maria", apellido: "Puerta", numerodeidentificacion: 21544615500, correo: "Maria@mail.com"}
+];
+
+function cargarTablaSecretarias() {
+    const SecretariasTableBody = document.getElementById("secretariasTableBody");
+    secretariasTableBody.innerHTML = ""; 
+    secretarias.forEach(secretarias => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", secretarias.id); 
+
+        row.innerHTML = `
+            <td>${secretarias.id}</td>
+            <td>${secretarias.nombre}</td>
+            <td>${secretarias.apellido}</td>
+            <td>${secretarias.numerodeidentificacion}</td>
+            <td>${secretarias.correo}</td>
+            <td><span class="delete-icon" onclick="eliminarSecretarias(${secretarias.id})">🗑️</span></td>
+        `;
+        secretariasTableBody.appendChild(row);
+    });
+}
+
+function eliminarSecretarias(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta secretaria?")) {
+        const index = secretarias.findIndex(secretarias => secretarias.id === id);
+        if (index !== -1) {
+            secretarias.splice(index, 1);
+            cargarTablaSecretarias(); 
+            alert("Secretaria eliminada exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaSecretarias();
+});
+
+// Profesores
+const profesores = [
+    { id: 1, nombre: "Marta", apellido: "Lopez", numerodeidentificacion: 78523150, correo: "Marta@mail.com", asignatura: "Español"  },
+    { id: 2, nombre: "Pepe", apellido: "Diaz", numerodeidentificacion: 2254415, correo: "Pepe@mail.com", asignatura: "Sociales"}
+];
+
+function cargarTablaProfesores() {
+    const ProfesoresTableBody = document.getElementById("profesoresTableBody");
+    profesoresTableBody.innerHTML = ""; 
+    profesores.forEach(profesores => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", profesores.id); 
+
+        row.innerHTML = `
+            <td>${profesores.id}</td>
+            <td>${profesores.nombre}</td>
+            <td>${profesores.apellido}</td>
+            <td>${profesores.numerodeidentificacion}</td>
+            <td>${profesores.correo}</td>
+            <td>${profesores.asignatura}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${profesores.id})">🗑️</span></td>
+        `;
+        profesoresTableBody.appendChild(row);
+    });
+}
+
+function eliminarProfesores(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este profesor?")) {
+        const index = profesores.findIndex(profesores => profesores.id === id);
+        if (index !== -1) {
+            profesores.splice(index, 1);
+            cargarTablaProfesores(); 
+            alert("Profesor eliminado exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaProfesores();
+});
+
+// Grupos
+const grupos = [
+    { id: 1, nombredelgrupo: "11-1"  },
+    { id: 2, nombredelgrupo: "8-3" }
+];
+
+function cargarTablaGrupos() {
+    const GruposTableBody = document.getElementById("gruposTableBody");
+    gruposTableBody.innerHTML = ""; 
+    grupos.forEach(grupos => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", grupos.id); 
+
+        row.innerHTML = `
+            <td>${grupos.id}</td>
+            <td>${grupos.nombredelgrupo}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${grupos.id})">🗑️</span></td>
+        `;
+        gruposTableBody.appendChild(row);
+    });
+}
+
+function eliminarGrupos(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este grupos?")) {
+        const index = grupos.findIndex(grupos => grupos.id === id);
+        if (index !== -1) {
+            grupos.splice(index, 1);
+            cargarTablaGrupos(); 
+            alert("Grupo eliminado exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaGrupos();
+});
+
+// Tutores
+const tutores = [
+    { id: 1, nombre: "Stiven", apellido: "Cano",  correo: "Stiven@mail.com", telefono: 1559641250 },
+    { id: 2, nombre: "Luz", apellido: "Perez",  correo: "Luz@mail.com", telefono: 5496321025 }
+];
+
+
+function cargarTablaTutores() {
+    const TutoresTableBody = document.getElementById("tutoresTableBody");
+    tutoresTableBody.innerHTML = ""; 
+    tutores.forEach(tutores => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", tutores.id); 
+
+        row.innerHTML = `
+            <td>${tutores.id}</td>
+            <td>${tutores.nombre}</td>
+            <td>${tutores.apellido}</td>
+            <td>${tutores.correo}</td>
+            <td>${tutores.telefono}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${tutores.id})">🗑️</span></td>
+        `;
+        tutoresTableBody.appendChild(row);
+    });
+}
+
+function eliminarTutores(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este tutor?")) {
+        const index = tutores.findIndex(tutores => tutores.id === id);
+        if (index !== -1) {
+            tutores.splice(index, 1);
+            cargarTablaTutores(); 
+            alert("Tutor eliminado exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaTutores();
+});
+
+// Materias
+const materias = [
+    { id: 1, nombredelamateria: "Quimica"  },
+    { id: 2, nombredelamateria: "Ingles" }
+];
+
+function cargarTablaMaterias() {
+    const MateriasTableBody = document.getElementById("materiasTableBody");
+    materiasTableBody.innerHTML = ""; 
+    materias.forEach(materias => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", materias.id); 
+
+        row.innerHTML = `
+            <td>${materias.id}</td>
+            <td>${materias.nombredelamateria}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${materias.id})">🗑️</span></td>
+        `;
+        materiasTableBody.appendChild(row);
+    });
+}
+
+function eliminarMaterias(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta materia?")) {
+        const index = materias.findIndex(materias => materias.id === id);
+        if (index !== -1) {
+            materias.splice(index, 1);
+            cargarTablaMaterias(); 
+            alert("Materia eliminada exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaMaterias();
+});
+
+// Asistencias
+const asistencias = [
+    { id: 1, hora: "7:30 am", fecha: "01/05/2023", idestudiante: 5 },
+    { id: 2, hora: "8:40 am", fecha: "12/02/2024", idestudiante: 2 }
+];
+
+function cargarTablaAsistencias() {
+    const AsistenciasTableBody = document.getElementById("asistenciasTableBody");
+    asistenciasTableBody.innerHTML = ""; 
+    asistencias.forEach(asistencias => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", asistencias.id); 
+
+        row.innerHTML = `
+            <td>${asistencias.id}</td>
+            <td>${asistencias.hora}</td>
+            <td>${asistencias.fecha}</td>
+            <td>${asistencias.idestudiante}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${asistencias.id})">🗑️</span></td>
+        `;
+        asistenciasTableBody.appendChild(row);
+    });
+}
+
+function eliminarAsistencias(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta asistencia?")) {
+        const index = asistencias.findIndex(asistencias => asistencias.id === id);
+        if (index !== -1) {
+            asistencias.splice(index, 1);
+            cargarTablaAsistencias(); 
+            alert("Asistencia eliminada exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaAsistencias();
+});
+
+// Excusas
+const excusas = [
+    { id: 1, hora: "7:30 am", fecha: "01/05/2023", correosecretaria: "Maria@mail.com", idmateria:"7", idprofesor:"5",  idestudiante: 5, idsecretaria: 2 },
+    { id: 2, hora: "8:40 am", fecha: "12/02/2024", correosecretaria: "Lulu@mail.com", idmateria:"6", idprofesor:"4",  idestudiante: 2, idsecretaria: 1 }
+];
+
+function cargarTablaExcusas() {
+    const ExcusasTableBody = document.getElementById("excusasTableBody");
+    excusasTableBody.innerHTML = ""; 
+    excusas.forEach(excusas => {
+        const row = document.createElement("tr"); 
+        row.setAttribute("data-id", excusas.id); 
+
+        row.innerHTML = `
+            <td>${excusas.id}</td>
+            <td>${excusas.fecha}</td>
+            <td>${excusas.hora}</td>
+            <td>${excusas.correosecretaria}</td>
+            <td>${excusas.idmateria}</td>
+            <td>${excusas.idprofesor}</td>
+            <td>${excusas.idestudiante}</td>
+            <td>${excusas.idsecretaria}</td>
+            <td><span class="delete-icon" onclick="eliminarProfesores(${excusas.id})">🗑️</span></td>
+        `;
+        excusasTableBody.appendChild(row);
+    });
+}
+
+function eliminarExcusas(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar esta excusa?")) {
+        const index = excusas.findIndex(excusas => excusas.id === id);
+        if (index !== -1) {
+            excusas.splice(index, 1);
+            cargarTablaExcusas(); 
+            alert("Excusa eliminada exitosamente");
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    cargarTablaExcusas();
+});
+
 
 // ----------- Estudiantes -----------
 async function fetchEstudiantes() {

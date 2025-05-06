@@ -30,7 +30,7 @@
                         <li onclick="showSection('excusas')">Excusas</li>
                     </ul>
                 </div>
-                <button onclick="toggleReadMenu()">Leer</button>
+                <!-- <button onclick="toggleReadMenu()">Leer</button>
                 <div id="readMenu" style="display: none; margin-top: 10px;">
                     <ul>
                         <li onclick="showSection('estudiantesRead')">Estudiante</li>
@@ -44,7 +44,7 @@
                         <li onclick="showSection('asistenciasRead')">Asistencias</li>
                         <li onclick="showSection('excusasRead')">Excusas</li>
                     </ul>
-                </div>
+                </div> -->
                
                 <button onclick="toggleUpdateMenu()">Actualizar</button>
                     <div id="updateMenu" style="display: none; margin-top: 10px;">
@@ -193,7 +193,7 @@
                 <ul id="excusaList"></ul>
             </div>
 
-            <div id="estudiantesRead" class="content-section">
+            <div id="estudiantesDelete" class="content-section">
                 <h2>Listado de Estudiantes</h2>
                 <table class="crud-table">
                     <thead>
@@ -211,7 +211,7 @@
             </div>
             
             
-            <div id="profesoresRead" class="content-section">
+            <div id="profesoresDelete" class="content-section">
                 <h2>Listado de Profesores</h2>
                 <table class="crud-table">
                     <thead>
@@ -220,6 +220,7 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Numero de identificación</th>
+                            <th>Correo</th>
                             <th>Asignatura</th>
                         </tr>
                     </thead>
@@ -228,7 +229,7 @@
                 </table>
             </div>
             
-            <div id="tutoresRead" class="content-section">
+            <div id="tutoresDelete" class="content-section">
                 <h2>Listado de Tutores</h2>
                 <table class="crud-table">
                     <thead>
@@ -245,7 +246,7 @@
                 </table>
             </div>
             
-            <div id="coordinadoresRead" class="content-section">
+            <div id="coordinadoresDelete" class="content-section">
                 <h2>Listado de Coordinadores</h2>
                 <table class="crud-table">
                     <thead>
@@ -262,7 +263,7 @@
                 </table>
             </div>
             
-            <div id="rectoresRead" class="content-section">
+            <div id="rectorDelete" class="content-section">
                 <h2>Listado de Rectores</h2>
                 <table class="crud-table">
                     <thead>
@@ -270,17 +271,18 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
+                            <th>Numero de identificacion</th>
                             <th>Correo</th>
-                            <th>Edad</th>
+                            
                         </tr>
                     </thead>
-                    <tbody id="rectoresTableBody">
+                    <tbody id="rectorTableBody">
                     </tbody>
                 </table>
             </div>
             
             
-            <div id="secretariasRead" class="content-section">
+            <div id="secretariasDelete" class="content-section">
                 <h2>Listado de Secretarias</h2>
                 <table class="crud-table">
                     <thead>
@@ -297,7 +299,7 @@
                 </table>
             </div>
             
-            <div id="gruposRead" class="content-section">
+            <div id="gruposDelete" class="content-section">
                 <h2>Listado de Grupos</h2>
                 <table class="crud-table">
                     <thead>
@@ -311,7 +313,7 @@
                 </table>
             </div>
             
-            <div id="materiasRead" class="content-section">
+            <div id="materiasDelete" class="content-section">
                 <h2>Listado de Materias</h2>
                 <table class="crud-table">
                     <thead>
@@ -325,7 +327,7 @@
                 </table>
             </div>
             
-            <div id="asistenciasRead" class="content-section">
+            <div id="asistenciasDelete" class="content-section">
                 <h2>Listado de Asistencias</h2>
                 <table class="crud-table">
                     <thead>
@@ -341,7 +343,7 @@
                 </table>
             </div>
             
-            <div id="excusasRead" class="content-section">
+            <div id="excusasDelete" class="content-section">
                 <h2>Listado de Excusas</h2>
                 <table class="crud-table">
                     <thead>
@@ -359,8 +361,13 @@
                     <tbody id="excusasTableBody">
                     </tbody>
                 </table>
-            </div>
-            
+            </div>            
+                
+
+
+        
+           
+
 
         </div>
     </div>
