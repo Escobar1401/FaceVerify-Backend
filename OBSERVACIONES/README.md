@@ -1,6 +1,6 @@
 # Cambios por hacer
 
-## En `index.html` y `style.css`
+## En `index.html` y `style.css` (TODO LISTO)
 
 - Las opciones del dashboard **no deben tener scroll** ni estar **flotantes**.
 - Deben mostrarse como parte **integrada del dashboard**.
@@ -12,7 +12,7 @@
 
 ---
 
-## En `script.js`
+## En `script.js` (TODO LISTO)
 
 - Actualmente, los datos del estudiante se obtienen correctamente con `document.getElementById(...)`.
 - Sin embargo, para otros usuarios, **algunos campos se están obteniendo con `prompt`**, lo cual **no debe usarse**.
