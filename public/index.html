@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <div class="sidebar">
+        <div class="menuLateral">
             <ul>
                 <li onclick="showSection('estudiantes')">Estudiante</li>
                 <li onclick="showSection('rector')">Rector</li>
@@ -25,8 +25,12 @@
             </ul>
         </div>
         <div class="tables">
-            <!-- Estudiantes -->
-            <div id="estudiantes" class="content-section active">
+            <div id="bienvenido" class="content-section active">
+                <h2>Bienvenido</h2> 
+                <p style="color: #94A3B8;">Selecciona una opción del menú para ver la información.</p>
+            </div>
+
+            <div id="estudiantes" class="content-section">
                 <h2>Tabla de Estudiantes</h2>
                 <input type="text" id="estudianteNombre" placeholder="Nombres" />
                 <input type="text" id="estudianteApellido" placeholder="Apellidos" />
@@ -34,12 +38,10 @@
                 <input type="email" id="estudianteCorreo" placeholder="Correo Electrónico" />
                 <input type="text" id="estudianteTelefono" placeholder="Teléfono">
                 <input type="password" id="estudianteContrasena" placeholder="Contraseña" />
-                <!--Falta el registro facial-->
                 <button onclick="addEstudiante()">Agregar Estudiante</button>
                 <ul id="estudianteList"></ul>
             </div>
 
-            <!-- Rector -->
             <div id="rector" class="content-section">
                 <h2>Tabla de Rector</h2>
                 <input type="text" id="rectorNombre" placeholder="Nombres" />
@@ -52,7 +54,6 @@
                 <ul id="rectorList"></ul>
             </div>
 
-            <!-- Coordinadores -->
             <div id="coordinadores" class="content-section">
                 <h2>Tabla de Coordinadores</h2>
                 <input type="text" id="coordinadorNombre" placeholder="Nombres" />
@@ -65,7 +66,6 @@
                 <ul id="coordinadorList"></ul>
             </div>
 
-            <!-- Secretarias -->
             <div id="secretarias" class="content-section">
                 <h2>Tabla de Secretarias</h2>
                 <input type="text" id="secretariaNombre" placeholder="Nombres" />
@@ -78,7 +78,6 @@
                 <ul id="secretariaList"></ul>
             </div>
 
-            <!-- Profesores -->
             <div id="profesores" class="content-section">
                 <h2>Tabla de Profesores</h2>
                 <input type="text" id="profesorNombre" placeholder="Nombres" />

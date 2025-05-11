@@ -1,40 +1,52 @@
-*{
+/* styles.css */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #0A0F1F;
     color: #EAF6FF;
     font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Con esto se evita el scroll en todo el cuerpo */
+    font-size: 16px; /* Se puede agregar esta línea */
 }
 
 .container {
     display: flex;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    overflow: hidden; /* Evita el scroll en el contenedor principal */
 }
 
-.sidebar {
+.menuLateral {
     width: 240px;
     background-color: #111827;
     padding: 20px 10px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.sidebar ul {
+.menuLateral ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: hidden; /* Se desactiva el scroll */
 }
 
-.sidebar li {
-    padding: 15px 30px;
+.menuLateral li {
+    padding: 21px 30px; /* Podemos modificar el tipo de tamaño de la barra lateral. */
     cursor: pointer;
     color: #CBD5E1;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 13px; /* Tipo de letra del menu lateral, estudiantes, profesores, etc */
 }
 
-.sidebar li:hover {
+.menuLateral li:hover {
     background-color: #1E293B;
     color: #FFFFFF;
 }
@@ -42,7 +54,8 @@ body {
 .tables {
     flex: 1;
     padding: 40px;
-    overflow-y: auto;
+    height: 100%;
+    overflow-y: hidden; /* Se desactiva el scroll */
 }
 
 .content-section {
@@ -52,7 +65,8 @@ body {
     padding: 30px;
     border-radius: 10px;
     background-color: #1E293B;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    min-height: 100%;
 }
 
 .content-section.active {
@@ -99,8 +113,8 @@ ul {
     background-color: #0F172A;
     border: 1px solid #334155;
     border-radius: 6px;
-    max-height: 300px;
-    overflow-y: auto;
+    max-height: none;
+    overflow-y: hidden; /* Se desactiva el scroll */
 }
 
 ul li {
