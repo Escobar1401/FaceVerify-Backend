@@ -16,5 +16,5 @@ app.get("/", (req, res) => {
 app.use("/api/estudiantes", estudiantesRoutes);
 
 app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Servidor de FaceVerify corriendo en http://localhost:${port}`);
 });
